@@ -5,8 +5,11 @@ import pickle
 class network:
     def __init__(self):
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        # CHANGE THIS VALUE TO THE SERVER HOST'S IPv4 ADDRESS
         self.server = "192.168.0.62"
-        #self.server = "184.148.0.37"
+        # **************************************************
+
         self.port = 5555
         self.addr = (self.server, self.port)
         self.p = self.connect()
@@ -28,7 +31,7 @@ class network:
             # send string data to server and receive object
             # self.client.send(str.encode(data))
             self.client.send(pickle.dumps(data))
-            return pickle.loads(self.client.recv(2048*4))
+            return pickle.loads(self.client.recv(2048*2048))
         except socket.error as e:
             print(e)
 

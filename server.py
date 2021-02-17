@@ -3,8 +3,10 @@ from _thread import *
 import pickle
 import game
 
-server = "192.168.0.62"
-#server = "64.228.89.39"
+# AS THE HOST, CHANGE THIS VALUE TO YOUR COMPUTER'S IPv4 ADDRESS
+server = "192.168.0.26"
+# **************************************************************
+
 port = 5555
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -39,7 +41,7 @@ def threaded_client(conn, p, gameId):
         try:
             # receive data from the client
             #data = conn.recv(4096).decode()
-            data = pickle.loads(conn.recv(4096*16))
+            data = pickle.loads(conn.recv(4096*2048))
 
             # check if the game exists
             if gameId in games:
