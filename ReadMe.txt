@@ -38,15 +38,23 @@ For Windows: Open the Microsoft Store and Search for python. Download the latest
 
 How To Run
 =========================================================
-1. Download and open WizardCardGame.zip
+1. Download the .zip of the code and open it.
 
 2. Place the folder in a desired location (Desktop, Documents, etc.)
 
-3. One user will have to host the server.
+3. One user will have to host the server. 
+Open "server.py" with your preferred text editor.
+Change the variable labled "server" to your computer's IPv4 address.
+
+4. As the host, run the server.
 For Mac: right click "server.py" -> open with -> "Python Launcher (3.x.x)" (latest version)
 For Windows: right click "server.py" -> open with -> "Python 3.x" or "Python"
 
-3. Open the folder and run the game client
+5. All users, including the host:
+Open "network.py" with your preferred text editor.
+Change the variable "self.server" to the server host's IPv4 address.
+
+6. All users, including the host, open the folder and run the game client.
 For Mac: right click "gameClient.py" -> open with -> "Python Launcher (3.x.x)" (latest version)
 For Windows: right click "gameClient.py" -> open with -> "Python 3.x" or "Python"
 
